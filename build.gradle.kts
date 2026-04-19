@@ -15,6 +15,10 @@ tasks.named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJ
 group = "me.user"
 version = "1.0-SNAPSHOT"
 
+kotlin {
+    jvmToolchain(17)
+}
+
 repositories {
     mavenCentral()
 }
@@ -29,5 +33,5 @@ tasks.test {
 }
 
 tasks.withType<KotlinCompile> {
-    compilerOptions.jvmTarget.set(JvmTarget.JVM_1_8)
+    compilerOptions.jvmTarget.set(JvmTarget.JVM_17)
 }
